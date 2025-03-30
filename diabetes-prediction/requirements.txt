@@ -1,0 +1,6 @@
+Flask
+numpy
+requests
+pandas
+joblib
+google-generativeai
