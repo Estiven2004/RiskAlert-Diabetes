@@ -7,8 +7,11 @@ Este proyecto utiliza inteligencia artificial para predecir el riesgo de diabete
 🚀 Características
 
 ✅ Predicción rápida y precisa del riesgo de diabetes.
+
 ✅ Interfaz web sencilla con Tailwind CSS y HTML.
+
 ✅ Backend en Flask con integración de un modelo de ML.
+
 ✅ Conexión con la API de Gemini para generar recomendaciones de salud.
 
 🛠 Tecnologías utilizadas
