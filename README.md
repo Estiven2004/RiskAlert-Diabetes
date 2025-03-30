@@ -4,6 +4,7 @@
 
 Este proyecto utiliza inteligencia artificial para predecir el riesgo de diabetes en función de datos de salud y estilo de vida. Con un modelo de Machine Learning y un backend en Flask, permite a los usuarios ingresar información clave y recibir un diagnóstico (No diabético, Pre-diabético o Diabético), acompañado de recomendaciones personalizadas generadas por IA.
 
+
 🚀 Características
 
 ✅ Predicción rápida y precisa del riesgo de diabetes.
@@ -14,6 +15,7 @@ Este proyecto utiliza inteligencia artificial para predecir el riesgo de diabete
 
 ✅ Conexión con la API de Gemini para generar recomendaciones de salud.
 
+
 🛠 Tecnologías utilizadas
 
 - Python (Flask, Scikit-Learn, Pandas)
@@ -23,6 +25,7 @@ Este proyecto utiliza inteligencia artificial para predecir el riesgo de diabete
 - Google Gemini API (Generación de recomendaciones personalizadas)
 
 - GitHub (Control de versiones y despliegue)
+
 
 📌 Cómo ejecutar el proyecto
 
@@ -37,5 +40,6 @@ python app.py
 3️⃣ Abre el navegador en:
 
 http://127.0.0.1:5000/
+
 
 💡 Este proyecto busca ayudar en la detección temprana de la diabetes y fomentar hábitos de vida saludables. ¡Contribuciones y mejoras son bienvenidas!
