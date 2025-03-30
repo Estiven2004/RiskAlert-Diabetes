@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Diabetes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-200 p-6">
+
+    <header class="text-center text-xl font-bold text-gray-800 mb-4">
+        Predicción de Diabetes
+    </header>
+    
+    <main class="max-w-lg mx-auto bg-gray-200 p-6 rounded-md shadow-md">
+        <form action="/predict" method="POST" id="diabetesForm" class="mt-4 space-y-4">
+            <fieldset class="border p-4 rounded-md mb-7">
+                <legend class="text-lg font-semibold text-gray-900">Información general y estilo de vida</legend>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Nombre</label>
+                    <input type="text" id="nombre" class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Rango de edad</label>
+                    <select id="edad" class="w-full p-2 border rounded-md">
+                        <option value="1">18 a 24 años</option>
+                        <option value="2">25 a 29 años</option>
+                        <option value="3">30 a 34 años</option>
+                        <option value="4">35 a 39 años</option>
+                        <option value="5">40 a 44 años</option>
+                        <option value="6">45 a 49 años</option>
+                        <option value="7">50 a 54 años</option>
+                        <option value="8">55 a 59 años</option>
+                        <option value="9">60 a 64 años</option>
+                        <option value="10">65 a 69 años</option>
+                        <option value="11">70 a 74 años</option>
+                        <option value="12">75 a 79 años</option>
+                        <option value="13">80 años o más</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Género</label>
+                    <select id="genero" class="w-full p-2 border rounded-md">
+                        <option value="1">Hombre</option>
+                        <option value="0">Mujer</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Hace ejercicio</label>
+                    <select id="hace_ejercicio" class="w-full p-2 border rounded-md">
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Come fruta</label>
+                    <select id="come_fruta" class="w-full p-2 border rounded-md">
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Come vegetales</label>
+                    <select id="come_vegetales" class="w-full p-2 border rounded-md">
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">IMC</label>
+                    <input type="number" id="imc" min="0" class="w-full p-2 border rounded-md" required>
+                </div>
+            </fieldset>
+            <fieldset class="border p-4 rounded-md">
+                <legend class="text-lg font-semibold text-gray-900">Factores de riesgo</legend>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Dificultad para caminar</label>
+                    <select id="dificultad_caminar" class="w-full p-2 border rounded-md">
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Fuma</label>
+                    <select id="fuma" class="w-full p-2 border rounded-md">
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Presión arterial alta</label>
+                    <select id="presion_arterial_alta" class="w-full p-2 border rounded-md">
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Colesterol alto</label>
+                    <select id="colesterol_alto" class="w-full p-2 border rounded-md">
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-800">Enfermedad cardíaca</label>
+                    <select id="enfermedad_cardiaca" class="w-full p-2 border rounded-md">
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </fieldset>
+            <div>
+                <button type="submit" class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">
+                    Predecir
+                </button>
+            </div>
+        </form>
+        <div id="respuesta"></div>
+        <div id="resultado" class="mt-4 text-center text-lg font-semibold text-gray-800 hidden">
+            <p>Resultado: <span id="prediccion"></span></p>
+            <p class="mt-2 font-medium">Recomendación:</p>
+            <p id="recomendacion" class="text-sm text-gray-800"></p>
+        </div>
+    </main>
+    
+    <footer class="text-center mt-6 text-gray-600 text-sm">
+        &copy; 2025 Predicción de Diabetes. Todos los derechos reservados.
+    </footer>
+</body>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("diabetesForm");
+
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault();
+                
+            if (imc < 0) {
+                alert("El IMC no puede ser negativo.");
+                event.preventDefault();
+            
+
+            if (nombre.trim() === "") {
+                alert("Por favor, ingresa un nombre.");
+                event.preventDefault(); // Evita que el formulario se envíe
+            }
+        }
+
+            const datos = {
+                nombre: document.getElementById("nombre").value,
+                edad: parseInt(document.getElementById("edad").value),
+                presion_arterial_alta: parseInt(document.getElementById("presion_arterial_alta").value),
+                colesterol_alto: parseInt(document.getElementById("colesterol_alto").value),
+                imc: parseFloat(document.getElementById("imc").value),
+                enfermedad_cardiaca: parseInt(document.getElementById("enfermedad_cardiaca").value),
+                hace_ejercicio: parseInt(document.getElementById("hace_ejercicio").value),
+                come_fruta: parseInt(document.getElementById("come_fruta").value),
+                come_vegetales: parseInt(document.getElementById("come_vegetales").value),
+                dificultad_caminar: parseInt(document.getElementById("dificultad_caminar").value),
+                genero: parseInt(document.getElementById("genero").value),
+                fuma: parseInt(document.getElementById("fuma").value)
+            };
+            try {
+                // Enviar datos al servidor
+                const response = await fetch("/predict", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(datos) // Convertir datos a JSON
+                });
+                // Mostrar la respuesta del servidor
+                const data = await response.json();
+                const resultadoDiv = document.getElementById("prediccion");
+                resultadoDiv.innerHTML = "<p>" + data.prediccion + "</p>";
+                const recomendacionDiv = document.getElementById("recomendacion");
+                recomendacionDiv.innerHTML = "<p>" + data.recomendacion + "</p>";
+                // eliminar hidden
+                document.getElementById("resultado").classList.remove("hidden");
+
+            } catch (error) {
+                console.error("Error al procesar la solicitud:", error);
+                alert("Hubo un error al procesar la predicción. Inténtalo nuevamente.");
+            }
+        });
+    });
+    </script>
+</html>
