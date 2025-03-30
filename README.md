@@ -24,5 +24,18 @@ Este proyecto utiliza inteligencia artificial para predecir el riesgo de diabete
 
 - GitHub (Control de versiones y despliegue)
 
+📌 Cómo ejecutar el proyecto
+
+1️⃣ Instala las dependencias:
+
+pip install -r requirements.txt
+
+2️⃣  Ejecuta la aplicación Flask:
+
+python app.py
+
+3️⃣ Abre el navegador en:
+
+http://127.0.0.1:5000/
 
 💡 Este proyecto busca ayudar en la detección temprana de la diabetes y fomentar hábitos de vida saludables. ¡Contribuciones y mejoras son bienvenidas!
